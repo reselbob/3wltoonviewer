@@ -1,0 +1,7 @@
+<div class="slider">
+ <div class="slide" ng-repeat="image in images" ng-show="image.visible">
+  <img class="toon" ng-src="{{image.FilePath}}" />
+ </div>
+ <a class="arrow prev" href="#" ng-click="prev()"></a>
+ <a class="arrow next" href="#" ng-click="next()"></a>
+</div>

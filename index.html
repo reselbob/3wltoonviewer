@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The World In Which We Live</title>
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <!-- <script src="js/jquery-2.0.3.min.js"></script>-->
+    <script src="http://code.angularjs.org/1.2.0rc1/angular.js"></script>
+    <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
+    <script src="js/3wlapp.js"></script>
+</head>
+<body>
+<div class="mainTitle">
+    The World in Which We Live
+</div>
+<div class="mainContainer" data-ng-app="3wlapp">
+    <div ng-controller="MainCtrl">
+        <div ng-if="photos">
+            <slider images="photos"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>
