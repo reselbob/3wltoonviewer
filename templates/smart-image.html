@@ -1,7 +1,10 @@
 <div class="slider">
- <div class="slide" ng-repeat="image in images" ng-show="image.visible">
-  <img class="toon" ng-src="{{image.FilePath}}" />
- </div>
- <a class="arrow prev" href="#" ng-click="prev()"></a>
- <a class="arrow next" href="#" ng-click="next()"></a>
+    <div class="imageContainer">
+        <div class="slide">
+            <div class="imageTitle">{{images[currentIndex].Description}} [{{currentIndex}} of {{images.length}} photos]</div>
+            <img class="toon" ng-src="{{images[currentIndex].FilePath}}"/>
+        </div>
+    </div>
+    <a class="arrow prev" href="#" ng-click="prev()"></a>
+    <a class="arrow next" href="#" ng-click="next()"></a>
 </div>

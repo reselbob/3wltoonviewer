@@ -42,7 +42,7 @@ angular.module('3wlapp', ['ngAnimate', 'ngTouch'])
             restrict: 'AE',
             replace: true,
             scope: {
-                images: '='
+                images: '=',
             },
             link: function (scope, elem, attrs) {
                 console.log(scope)
