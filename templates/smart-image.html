@@ -1,10 +1,14 @@
 <div class="slider">
     <div class="imageContainer">
+        <div class="arrowContainer"><img class="imgContainer" src="static/prev.png" ng-click="prev()"/><img class="imgContainer"src="static/next.png" ng-click="next()"/><div>
         <div class="slide">
-            <div class="imageTitle">{{images[currentIndex].Description}} [{{currentIndex}} of {{images.length}} photos]</div>
+            <div class="imageTitle">{{images[currentIndex].Description}}</div>
             <img class="toon" ng-src="{{images[currentIndex].FilePath}}"/>
+            <div class="imageTitle"> [{{currentIndex + 1}} of {{images.length}} cartoons]</div>
         </div>
     </div>
+    <!--
     <a class="arrow prev" href="#" ng-click="prev()"></a>
     <a class="arrow next" href="#" ng-click="next()"></a>
+    -->
 </div>

@@ -5,16 +5,43 @@
     <title>The World In Which We Live</title>
 
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+            crossorigin="anonymous"></script>
     <!-- <script src="js/jquery-2.0.3.min.js"></script>-->
     <script src="http://code.angularjs.org/1.2.0rc1/angular.js"></script>
     <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
     <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
+    <script type="text/javascript" src="js/general.js"></script>
     <script src="js/3wlapp.js"></script>
 </head>
 <body>
+<div class="menu-btn" id="menu-btn">
+    <div>
+    </div>
+    <span></span> <span></span> <span></span>
+</div>
+
+<div class="surround">
+    <div class="menu">
+        <div class="header">
+            <a href="TheWorldInWhichWeLive.rss">RSS</a>
+        </div>
+        <div class="header">
+            <a class="fancybox" href="#aboutus">About Us</a>
+        </div>
+        <div class="header">
+            <a class="fancybox" href="#thelist">Get on The List</a>
+        </div>
+        <div class="header">
+            <a class="fancybox" href="#contactus">Contact Us</a>
+        </div>
+    </div>
+</div>
 <div class="mainTitle">
     The World in Which We Live
+    <hr>
 </div>
 <div class="mainContainer" data-ng-app="3wlapp">
     <div ng-controller="MainCtrl">
