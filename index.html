@@ -14,9 +14,9 @@
     <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
     <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
     <script type="text/javascript" src="js/general.js"></script>
-    <script src="js/3wlapp.js"></script>
+    <script type="text/javascript" src="js/3wlapp.js"></script>
 </head>
-<body>
+<body class="mainContainer" data-ng-app="3wlapp" ng-controller="MainCtrl">
 <div class="menu-btn" id="menu-btn">
     <div>
     </div>
@@ -25,6 +25,12 @@
 
 <div class="surround">
     <div class="menu">
+        <menu-item caption="RSS" mode="rss"></menu-item>
+        <menu-item caption="Merchandise" mode="merchandise"></menu-item>
+        <menu-item caption="About Us" mode="aboutus"></menu-item>
+        <menu-item caption="Get on The List" mode="thelist"></menu-item>
+        <menu-item caption="Contact Us" mode="contactus"></menu-item>
+        <!--
         <div class="header">
             <a href="TheWorldInWhichWeLive.rss">RSS</a>
         </div>
@@ -37,18 +43,24 @@
         <div class="header">
             <a class="fancybox" href="#contactus">Contact Us</a>
         </div>
+        -->
     </div>
 </div>
 <div class="mainTitle">
     The World in Which We Live
     <hr>
 </div>
-<div class="mainContainer" data-ng-app="3wlapp">
-    <div ng-controller="MainCtrl">
-        <div ng-if="photos">
-            <slider images="photos"/>
-        </div>
+<div>
+    <div ng-if="photos">
+        <slider images="photos"/>
     </div>
 </div>
+
+<div id="menuForm"> </div>
+<div id="aboutus" ng-hide="true">I am all about AboutUs</div>
+<div id="contactus"  ng-hide="true">I am all about contactus</div>
+<div id="thelist"  ng-hide="true">I am all about thelist</div>
+<div id="merchandise"  ng-hide="true">I am all about merchandise</div>
+
 </body>
 </html>

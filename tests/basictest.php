@@ -10,6 +10,7 @@ $curDir =  dirname( __FILE__, 2 );
 $photos = $jsonizer->getFilesAsArray($curDir ."/" . $configs['imagesDir']);
 
 
-echo realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
+//echo realpath(__DIR__ . DIRECTORY_SEPARATOR . '..');
+echo $photos;
 
 ?>

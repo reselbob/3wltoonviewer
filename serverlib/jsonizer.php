@@ -7,13 +7,14 @@ class Jsonizer {
         }
     
     public function getFilesAsArray($imagesDir){
-        $configs = include('configs.php');
-        $configDir = $configs['imagesDir'];
+        $configs = include('../configs.php');
+        $iDir = ROOT .$configs['imagesDir'];
        date_default_timezone_set('America/Los_Angeles');
         $files = array();
         //$fileBinary = array();
 
-        $fileBinaries= glob($imagesDir . '/*.jpg');
+        $fileBinaries= glob($iDir . '/*.jpg');
+        //$fileBinaries= glob($imagesDir . '/*.jpg');
         usort($fileBinaries, function($a, $b) {
             return filemtime($a) < filemtime($b);
         });
@@ -22,7 +23,7 @@ class Jsonizer {
                 list($width, $height, $type, $attr) = getimagesize($fileBinary);
                 $ft = filemtime($fileBinary);
                 preg_match("/Number-.*/", $fileBinary, $matches);
-                $localUrl = $configDir . "/". $matches[0];
+                $localUrl ='/'. $configs['imagesDir'].'/'.$matches[0];
                 $files[] = new PhotoInfo( $localUrl,$width,$height,$ft, date ("F d, Y", $ft));
             }
         }

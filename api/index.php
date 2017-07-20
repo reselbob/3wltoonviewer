@@ -28,10 +28,14 @@ if(isset($_GET['nextindex'])){$nextindex=$_GET['nextindex'];}
 $jsonizer = new Jsonizer();
 session_start();
 
+/*
 if(!isset($_SESSION["photos"])){
     $_SESSION["photos"] = $jsonizer->getFilesAsArray(ROOT .$configs['imagesDir']);
 }
 $photos = $_SESSION["photos"];
+*/
+
+$photos = $jsonizer->getFilesAsArray(ROOT .$configs['imagesDir']);
 
 $found = $jsonizer->putSelectedImageOnTop($photos,$image_id);
 $photoData = $found;

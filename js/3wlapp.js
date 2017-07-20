@@ -5,6 +5,7 @@ angular.module('3wlapp', ['ngAnimate', 'ngTouch'])
             .then(function (result, error) {
                 $scope.photos = result.data;
             });
+        $scope.popupContent = 'PopUp Content';
 // initial image index
         $scope._Index = 0;
 // if a current image is the same as requested image
@@ -24,18 +25,25 @@ angular.module('3wlapp', ['ngAnimate', 'ngTouch'])
             $scope._Index = index;
         };
     })
-    .directive('smartImg', function () {
+    .directive('menuItem', function () {
         return {
-            restrict: 'E',
-            controller: 'MainCtrl',
-            link: function (scope, element, attrs) {
-
-                console.log(scope._Index);
+            restrict: 'AE',
+            replace: true,
+            scope: {
+                caption: '@',
+                mode: '@',
+                popupContent: '='
             },
-            templateUrl: '/templates/smart-image.html'
+            transclude: true,
+            link: function (scope) {
+                scope.show = function () {
+                    console.log('Pop ' + scope.mode);
+                    document.getElementById('menuForm').innerHTML = document.getElementById(scope.mode).innerHTML;
 
+                }
+            },
+            templateUrl: 'templates/menu-item.html'
         }
-
     })
     .directive('slider', function ($timeout) {
         return {
@@ -45,9 +53,7 @@ angular.module('3wlapp', ['ngAnimate', 'ngTouch'])
                 images: '=',
             },
             link: function (scope, elem, attrs) {
-                console.log(scope)
                 scope.currentIndex = 0; // Initially the index is at the first image
-
                 scope.next = function () {
                     scope.currentIndex < scope.images.length - 1 ? scope.currentIndex++ : scope.currentIndex = 0;
                 };
